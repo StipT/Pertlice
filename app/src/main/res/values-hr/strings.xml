@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pertlice</string>
+    <string name="back_button_text">Nazad</string>
+    <string name="credits_content_text">Ništa zasada</string>
+    <string name="finish_button_text">Završi</string>
+    <string name="next_button_text">Dalje</string>
+    <string name="start_button_text">Započni učenje</string>
+    <string name="step_desc_1">Za usporedbu, pogledaj svoju cipelu is svoje perspektive.</string>
+    <string name="step_desc_2">Napravi čvor tako da provučeš jednu vezicu kroz drugu.</string>
+    <string name="step_desc_3">Čvrsto zategni vezice.</string>
+    <string name="step_desc_4">Napravi omču na desnoj strani.</string>
+    <string name="step_desc_5">Slobodnom vezicom okruži omču.</string>
+    <string name="step_desc_6">"Provuci lijevu vezicu kroz rupu, uhvati obje omče i povuci."</string>
+    <string name="step_desc_7">Nastavi povlačiti omče sve dok se ne načini čvrst čvor.</string>
+    <string name="step_desc_8">Pobrini se da čvor bude na sredini te da su duljine vezica jednake.\nTo je to!</string>
+    <string name="step_title_1">1.Korak: Priprema</string>
+    <string name="step_title_2">2.Korak: Jedna preko druge</string>
+    <string name="step_title_3">3.Korak: Čvrsti čvor</string>
+    <string name="step_title_4">4.Korak: Omča</string>
+    <string name="step_title_5">5.Korak: Oko omče</string>
+    <string name="step_title_6">6.Korak: Kroz rupu</string>
+    <string name="step_title_7">7.Korak: Povuci</string>
+    <string name="step_title_8">8.Korak: Kraj</string>
+    <string name="username_hint">ime</string>
+    <string name="post_button_text">Objavi</string>
+    <string name="editComment_error">Ovo polje ne može ostati prazno</string>
+    <string name="credits_title_text">Ostavi komentar</string>
+    <string name="credits_tab_title">Autor</string>
+    <string name="comments_tab_title">Komentari</string>
+    <string name="comment_hint">komentar</string>
+    <string name="comment_date_now">Upravo</string>
+    <string name="anonymous_username">Anoniman</string>
+</resources>
