@@ -42,6 +42,9 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7:28.0.0'
     implementation 'com.android.support:multidex:1.0.3'
 
+    //Koin
+    implementation 'org.koin:koin-android:2.0.0'
+    implementation 'org.koin:koin-android-scope:2.0.0-GA'
     
     //firestore
     implementation 'com.google.firebase:firebase-core:16.0.9'

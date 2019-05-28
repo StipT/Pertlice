@@ -1,26 +1,51 @@
-package com.tstipanic.pertle.learning_screen
+package com.tstipanic.pertle.learning_screen.view
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.view.ViewPager
+import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.tstipanic.pertle.R
-import com.tstipanic.pertle.comments_screen.CommentsActivity
+import com.tstipanic.pertle.comments_screen.view.CommentsActivity
 import com.tstipanic.pertle.learning_screen.pager_adapter.StepsPagerAdapter
 import com.tstipanic.pertle.learning_screen.pager_adapter.ZoomOutTransformation
+import com.tstipanic.pertle.learning_screen.presenter.LearningPresenter
 import com.tstipanic.pertle.model.LearningSteps
 import kotlinx.android.synthetic.main.activity_learning.*
+import org.koin.android.ext.android.inject
+import org.koin.core.parameter.parametersOf
 
-class LearningActivity : AppCompatActivity() {
+class LearningActivity : AppCompatActivity(), LearningView {
+
+    private val presenter: LearningPresenter by inject { parametersOf(this) }
+
     private var lastStep = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_learning)
-        initUi()
+        presenter.onCreate()
     }
 
+    override fun initUi() {
+        viewPagerSetup()
+        dotsIndicator.setViewPager(viewPager)
+        nextButton.setOnClickListener { presenter.onNextButton() }
+        backButton.setOnClickListener { presenter.onBackButton() }
+    }
+
+
+    override fun nextButtonClick() {
+        if (lastStep) {
+            startActivity(Intent(this@LearningActivity, CommentsActivity::class.java))
+        } else {
+            viewPager.currentItem++
+        }
+    }
+
+    override fun backButtonClick() {
+        viewPager.currentItem--
+    }
 
     private fun whenPageSelected(position: Int) {
         stepTitleText.setText(LearningSteps.list[position].title)
@@ -44,8 +69,7 @@ class LearningActivity : AppCompatActivity() {
         }
     }
 
-
-    private fun initUi() {
+    private fun viewPagerSetup() {
         viewPager.adapter = StepsPagerAdapter(supportFragmentManager)
         viewPager.clipToPadding = false
         viewPager.setPadding(96, 0, 96, 0)
@@ -57,25 +81,6 @@ class LearningActivity : AppCompatActivity() {
             override fun onPageScrollStateChanged(p0: Int) { }
             override fun onPageScrolled(p0: Int, p1: Float, p2: Int) { }
         })
-
-        nextButton.setOnClickListener { nextButtonClick() }
-        backButton.setOnClickListener { backButtonClick() }
-
-        worm_dots_indicator.setViewPager(viewPager)
-    }
-
-
-    private fun nextButtonClick() {
-        if (lastStep) {
-            startActivity(Intent(this@LearningActivity, CommentsActivity::class.java))
-        } else {
-            viewPager.currentItem++
-        }
-    }
-
-
-    private fun backButtonClick() {
-        viewPager.currentItem--
     }
 }
 

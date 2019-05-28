@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import com.tstipanic.pertle.R
 import com.tstipanic.pertle.model.Comment
 
-class CommentRecyclerAdapter : RecyclerView.Adapter<CommentViewHolder>(){
+class CommentRecyclerAdapter : RecyclerView.Adapter<CommentViewHolder>() {
 
     private var commentList: MutableList<Comment> = mutableListOf()
 
@@ -17,12 +17,9 @@ class CommentRecyclerAdapter : RecyclerView.Adapter<CommentViewHolder>(){
         return CommentViewHolder(view)
     }
 
-    override fun getItemCount(): Int {
-        if (commentList.size >= 10) {
-            return 10
-        } else {
-            return commentList.size
-        }
+    override fun getItemCount() = when (commentList.size) {
+        in 10..Int.MAX_VALUE -> 10
+        else -> commentList.size
     }
 
     override fun onBindViewHolder(p0: CommentViewHolder, p1: Int) {

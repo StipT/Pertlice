@@ -3,22 +3,22 @@ package com.tstipanic.pertle.model.interactor
 import android.util.Log
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
-import com.tstipanic.pertle.common.FirestoreCallback
 import com.tstipanic.pertle.common.COLLECTION_NAME
+import com.tstipanic.pertle.common.FirestoreCallback
 import com.tstipanic.pertle.common.TIMESTAMP_FIELD
 import com.tstipanic.pertle.model.Comment
 
 
-class Interactor {
+class InteractorImpl : Interactor {
     private val firestoreDb = FirebaseFirestore.getInstance().collection(COLLECTION_NAME)
 
 
-    fun addDataToDb(comment: Comment) {
+    override fun addDataToDb(comment: Comment) { //TODO showToast
         firestoreDb.add(comment).addOnCompleteListener { Log.d("addDataToDb", it.result.toString()) }
     }
 
 
-    fun getDataFromDb(callback: FirestoreCallback) {
+    override fun getDataFromDb(callback: FirestoreCallback) {
         firestoreDb.orderBy(TIMESTAMP_FIELD, Query.Direction.DESCENDING)
             .get()
             .addOnCompleteListener {

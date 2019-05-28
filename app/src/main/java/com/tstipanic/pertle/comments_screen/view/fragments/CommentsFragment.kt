@@ -1,17 +1,21 @@
-package com.tstipanic.pertle.comments_screen.fragments
+package com.tstipanic.pertle.comments_screen.view.fragments
 
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
-import com.tstipanic.pertle.common.FirestoreCallback
-import com.tstipanic.pertle.model.interactor.Interactor
 import com.tstipanic.pertle.R
 import com.tstipanic.pertle.comments_screen.adapters.CommentRecyclerAdapter
-import com.tstipanic.pertle.comments_screen.fragments.base.BaseFragment
+import com.tstipanic.pertle.comments_screen.presenter.CommentsFragPresenter
+import com.tstipanic.pertle.comments_screen.view.fragments.base.BaseFragment
 import com.tstipanic.pertle.model.Comment
 import kotlinx.android.synthetic.main.fragment_comments.*
+import org.koin.android.ext.android.inject
+import org.koin.core.parameter.parametersOf
 
-class CommentsFragment : BaseFragment(), FirestoreCallback {
+class CommentsFragment : BaseFragment(), CommentsFragView {
+
+    private val presenter: CommentsFragPresenter by inject { parametersOf(this) }
+    private val adapter = CommentRecyclerAdapter()
 
     override fun getLayoutResourceId() = R.layout.fragment_comments
 
@@ -19,23 +23,19 @@ class CommentsFragment : BaseFragment(), FirestoreCallback {
         fun newInstance() = CommentsFragment()
     }
 
-    private val interactor = Interactor()
-    private var commentList: List<Comment> = mutableListOf()
-    private val adapter = CommentRecyclerAdapter()
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initUi()
+        presenter.onViewCreated()
     }
 
-    private fun initUi() {
+
+    override fun initUi() {
 
         commentRecyclerView.layoutManager = LinearLayoutManager(context)
         commentRecyclerView.adapter = adapter
         configureSwipeRefresh()
-        interactor.getDataFromDb(this)
-
         postButton.setOnClickListener { postComment() }
+        presenter.fetchComments()
 
     }
 
@@ -52,24 +52,26 @@ class CommentsFragment : BaseFragment(), FirestoreCallback {
         } else {
             val content = enterComment.text.trim().toString()
             val comment = Comment(username, content)
-            interactor.addDataToDb(comment)
             clearEditTexts()
+            presenter.storeComment(comment)
         }
-
     }
+
 
     private fun clearEditTexts() {
         enterUsername.text.clear()
         enterComment.text.clear()
     }
 
-    override fun onCallback(list: List<Comment>) {
-        commentList = list
-        adapter.addItems(commentList)
+    override fun populateList(list: List<Comment>) {
+        adapter.addItems(list)
     }
 
     private fun configureSwipeRefresh() {
-        swipeLayout.setOnRefreshListener { interactor.getDataFromDb(this); swipeLayout.isRefreshing = false}
+        swipeLayout.setOnRefreshListener {
+            presenter.fetchComments()
+            swipeLayout.isRefreshing = false
+        }
     }
 
 

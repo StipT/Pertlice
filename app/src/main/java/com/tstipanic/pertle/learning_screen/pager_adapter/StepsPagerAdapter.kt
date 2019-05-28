@@ -3,7 +3,7 @@ package com.tstipanic.pertle.learning_screen.pager_adapter
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
-import com.tstipanic.pertle.learning_screen.PagerFragment
+import com.tstipanic.pertle.learning_screen.view.PagerFragment
 import com.tstipanic.pertle.model.LearningSteps
 
 class StepsPagerAdapter(fm: FragmentManager) :FragmentPagerAdapter(fm) {

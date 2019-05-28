@@ -1,4 +1,4 @@
-package com.tstipanic.pertle.comments_screen.fragments.base
+package com.tstipanic.pertle.comments_screen.view.fragments.base
 
 import android.os.Bundle
 import android.support.v4.app.Fragment

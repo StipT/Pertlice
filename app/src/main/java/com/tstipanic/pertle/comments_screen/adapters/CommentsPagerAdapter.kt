@@ -5,8 +5,8 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 import com.tstipanic.pertle.R
-import com.tstipanic.pertle.comments_screen.fragments.CommentsFragment
-import com.tstipanic.pertle.comments_screen.fragments.CreditsFragment
+import com.tstipanic.pertle.comments_screen.view.fragments.CommentsFragment
+import com.tstipanic.pertle.comments_screen.view.fragments.CreditsFragment
 
 class CommentsPagerAdapter (fm: FragmentManager, private val context: Context): FragmentPagerAdapter(fm) {
     override fun getItem(p0: Int): Fragment = when(p0) {

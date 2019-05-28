@@ -1,4 +1,4 @@
-package com.tstipanic.pertle.learning_screen
+package com.tstipanic.pertle.learning_screen.view
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -12,7 +12,6 @@ import kotlinx.android.synthetic.main.fragment_learning_step.view.*
 
 class PagerFragment: Fragment() {
     companion object {
-
         fun newInstance(i: Int): PagerFragment {
             val bundle = Bundle()
             val fragment = PagerFragment()
@@ -24,7 +23,6 @@ class PagerFragment: Fragment() {
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-
         val position = arguments?.getSerializable(EXTRA_ITEM_POSITION) as Int
         val view = inflater.inflate(R.layout.fragment_learning_step, container, false)
         val learningStep = LearningSteps.list[position]
@@ -34,8 +32,5 @@ class PagerFragment: Fragment() {
         view.learningStepDesc.bringToFront()
 
         return view
-
-
-
     }
 }
