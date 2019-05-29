@@ -3,6 +3,7 @@ package com.tstipanic.pertle.comments_screen.view.fragments
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
+import android.widget.Toast
 import com.tstipanic.pertle.R
 import com.tstipanic.pertle.comments_screen.adapters.CommentRecyclerAdapter
 import com.tstipanic.pertle.comments_screen.presenter.CommentsFragPresenter
@@ -54,6 +55,8 @@ class CommentsFragment : BaseFragment(), CommentsFragView {
             val comment = Comment(username, content)
             clearEditTexts()
             presenter.storeComment(comment)
+            Toast.makeText(activity?.applicationContext, getString(R.string.comment_added_toast), Toast.LENGTH_SHORT)
+                .show()
         }
     }
 
@@ -74,5 +77,15 @@ class CommentsFragment : BaseFragment(), CommentsFragView {
         }
     }
 
+    override fun showLoader() {
+        commentLoader.visibility = View.VISIBLE
+    }
 
+    override fun hideLoader() {
+        commentLoader.visibility = View.GONE
+    }
+
+    override fun showNoServiceToast() {
+        Toast.makeText(activity?.applicationContext, getString(R.string.no_service_toast), Toast.LENGTH_LONG).show()
+    }
 }

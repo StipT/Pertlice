@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Pertlice</string>
     <string name="back_button_text">Nazad</string>
-    <string name="credits_content_text">Ništa zasada</string>
     <string name="finish_button_text">Završi</string>
     <string name="next_button_text">Dalje</string>
     <string name="start_button_text">Započni učenje</string>
+
     <string name="step_desc_1">Za usporedbu, pogledaj svoju cipelu is svoje perspektive.</string>
     <string name="step_desc_2">Napravi čvor tako da provučeš jednu vezicu kroz drugu.</string>
     <string name="step_desc_3">Čvrsto zategni vezice.</string>
@@ -21,14 +21,37 @@
     <string name="step_title_5">5.Korak: Oko omče</string>
     <string name="step_title_6">6.Korak: Kroz rupu</string>
     <string name="step_title_7">7.Korak: Povuci</string>
-    <string name="step_title_8">8.Korak: Kraj</string>
+    <string name="step_title_8">8.Korak: Završnica</string>
+
     <string name="username_hint">ime</string>
     <string name="post_button_text">Objavi</string>
     <string name="editComment_error">Ovo polje ne može ostati prazno</string>
     <string name="credits_title_text">Ostavi komentar</string>
-    <string name="credits_tab_title">Autor</string>
+    <string name="credits_tab_title">O nama</string>
     <string name="comments_tab_title">Komentari</string>
     <string name="comment_hint">komentar</string>
-    <string name="comment_date_now">Upravo</string>
+
     <string name="anonymous_username">Anoniman</string>
+    <string name="comment_added_toast">Vaš komentar je objavljen</string>
+    <string name="credits_text">Izradio: Tomislav Stipanić \nMentor: Matija Marić\nOsijek, 2019.</string>
+    <string name="credits_second_seg_text">Ova aplikacija je posvećena našoj dragoj kolegici Ani Musa iz Županje.
+        Kako bi se ohrabrila na trnovitom putu učenja vezanja patika.
+        Neka ti pertle postanu najbolji prijatelji, a čičak ostane samo u lijepom sjećanju.
+    </string>
+    <string name="credits_fourth_seg_text">Sretno !</string>
+    <string name="credits_first_seg_text">Aplikacija je razvijena u suradnji s Plavom Tvornicom u edukacijske svrhe.
+    </string>
+    <string name="no_service_toast">Nemoguće doći do podataka, provjeri povezanost s internetom</string>
+
+
+    <string name="comment_date_now">Upravo</string>
+    <string name="x_minutes_ago">Prije %1$d min</string>
+    <string name="one_hour_ago">Prije sat vremena</string>
+    <string name="x_hours_ago" tools:ignore="ExtraTranslation">Prije %1$d h</string>
+    <string name="one_day_ago">Jučer</string>
+    <string name="x_days_ago">Prije %1$d dana</string>
+    <string name="long_time_ago">Davno</string>
+    <string name="unknown_timestamp">nepoznato</string>
+
+
 </resources>

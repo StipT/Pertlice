@@ -8,6 +8,23 @@
         android:layout_height="match_parent"
         tools:context=".comments_screen.view.CommentsActivity">
 
+    <com.agrawalsuneet.loaderspack.loaders.CurvesLoader
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:curves_animDuration="1000"
+            app:curves_curveColor="@color/secondaryColor"
+            app:curves_curveSweepAngle="160"
+            app:curves_curveWidth="5dp"
+            app:curves_distanceBetweenCurves="5dp"
+            app:curves_interpolator="@android:anim/linear_interpolator"
+            app:curves_noOfCurves="5"
+            app:curves_outermostCurveRadius="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/commentLoader"
+            app:layout_constraintTop_toTopOf="@+id/swipeLayout"
+            app:layout_constraintEnd_toEndOf="@+id/swipeLayout"
+            app:layout_constraintStart_toStartOf="@+id/swipeLayout" android:visibility="visible"/>
+
     <android.support.v4.widget.SwipeRefreshLayout
             android:layout_width="0dp"
             android:layout_height="0dp"

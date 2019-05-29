@@ -1,15 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                             xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             android:layout_width="match_parent"
                                              android:layout_height="match_parent">
-
     <TextView
-            android:text="@string/my_name"
+            android:text="@string/credits_text"
             android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:id="@+id/creditsText"
+            app:layout_constraintEnd_toEndOf="@+id/creditsFirstSeg"
+            app:layout_constraintStart_toStartOf="@+id/creditsFirstSeg"
+            android:textStyle="bold|italic" android:textSize="18sp"
+            app:layout_constraintHorizontal_bias="0.496"
+            android:textAlignment="center"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/creditsFirstSeg"/>
+
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+              android:id="@+id/creditsFirstSeg"
+              android:text="@string/credits_first_seg_text"
+              android:textSize="18sp"
+              android:textAlignment="center"
+              android:textStyle="italic" android:layout_marginStart="8dp"
+              app:layout_constraintStart_toStartOf="parent" android:layout_marginEnd="8dp"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintHorizontal_bias="0.0"
+              android:layout_marginTop="64dp" app:layout_constraintTop_toBottomOf="@+id/creditsFourthSeg"/>
+
+    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+              android:text="@string/credits_second_seg_text"
+              android:textSize="20sp"
+              android:id="@+id/creditsDedication"
+              android:textAlignment="center"
+              android:fontFamily="@font/architects_daughter"
+              android:textStyle="italic"
+              android:layout_marginTop="32dp"
+              app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+              android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+              android:layout_marginStart="8dp"/>
+    <TextView
+            android:text="@string/credits_fourth_seg_text"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/creditsText" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="8dp" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp" android:textStyle="bold|italic" android:textSize="36sp"/>
+            android:id="@+id/creditsFourthSeg"
+            app:layout_constraintStart_toStartOf="@+id/creditsDedication"
+            app:layout_constraintEnd_toEndOf="@+id/creditsDedication"
+            app:layout_constraintHorizontal_bias="0.0" android:textStyle="bold"
+            android:textAlignment="center" android:textColor="@color/secondaryColor" android:textSize="40sp"
+            android:fontFamily="@font/architects_daughter"
+            app:layout_constraintTop_toBottomOf="@+id/creditsDedication"
+            android:layout_marginTop="24dp"/>
+
+
 </android.support.constraint.ConstraintLayout>

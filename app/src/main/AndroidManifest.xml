@@ -12,20 +12,24 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme" tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name=".comments_screen.view.CommentsActivity">
+        <activity android:name=".comments_screen.view.CommentsActivity"
+                  android:screenOrientation="portrait">
         </activity>
         <activity
                 android:name=".splash_screen.view.SplashActivity"
-                android:theme="@style/SplashTheme">
+                android:theme="@style/SplashTheme"
+                android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".dedication_screen.view.DedicationActivity">
+        <activity android:name=".dedication_screen.view.DedicationActivity"
+                  android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".learning_screen.view.LearningActivity">
+        <activity android:name=".learning_screen.view.LearningActivity"
+                  android:screenOrientation="portrait">
         </activity>
         <meta-data android:name="preloaded_fonts" android:resource="@array/preloaded_fonts"/>
     </application>

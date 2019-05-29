@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name" translatable="false">Pertlice</string>
     <string name="start_button_text">Start learning</string>
 
@@ -7,7 +7,9 @@
     <string name="step_desc_3">Pull the laces tightly together.</string>
     <string name="step_desc_4">Start with the loop on the right side</string>
     <string name="step_desc_5">Take the free-end lace and bring it around the blue lace, going behind the right loop.</string>
-    <string name="step_desc_6">With the left lace now go through the gap, hold both loops and pull them in opposite directions.</string>
+    <string name="step_desc_6">With the left lace go through the gap, hold both loops and pull them in opposite
+        directions.
+    </string>
     <string name="step_desc_7">Continue pulling on the loops until the knot is firmly secured.</string>
     <string name="step_desc_8">Ensure the knot sits in the center and the shoelace lengths are even.\n That\'s it!</string>
 
@@ -25,15 +27,34 @@
     <string name="finish_button_text">Finish</string>
 
     <string name="credits_title_text">Leave a comment</string>
-    <string name="comment_date_now">Just now</string>
+
     <string name="username_hint">username</string>
     <string name="comment_hint">comment</string>
     <string name="post_button_text">Post</string>
     <string name="anonymous_username">Anonymous</string>
-    <string name="credits_tab_title">Credits</string>
+    <string name="credits_tab_title">About</string>
     <string name="comments_tab_title">Comments</string>
     <string name="editComment_error">This field cannot be blank</string>
-    <string name="my_name" translatable="false">Tomislav Stipanić</string>
+
+    <string name="credits_first_seg_text">Developed in collaboration with Blue Factory for learning purposes.</string>
+    <string name="credits_second_seg_text">This app is dedicated to our dear colleague Ana Musa from Županja.
+        So she can be encouraged on this hard journey of learning shoe lacing.
+        Let the shoelaces become your best friends while velcro stays in your beautiful but distant memory.
+    </string>
+    <string name="credits_fourth_seg_text">Good Luck !</string>
+    <string name="credits_text">Created by: Tomislav Stipanić\nMentor: Matija Marić\nOsijek, 2019.</string>
+
+    <string name="comment_added_toast">Your comment has been posted</string>
+    <string name="no_service_toast">Can\'t reach data, check your internet connection</string>
+
+    <string name="comment_date_now">Just now</string>
+    <string name="x_minutes_ago">%1$d min ago</string>
     <string name="one_hour_ago">One hour ago</string>
+    <string name="x_hours_ago" tools:ignore="ExtraTranslation">%1$d hours ago</string>
+    <string name="one_day_ago">A day ago</string>
+    <string name="x_days_ago">%1$d days ago</string>
+    <string name="long_time_ago">Long time ago</string>
+    <string name="unknown_timestamp">unknown</string>
+
 
 </resources>

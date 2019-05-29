@@ -12,7 +12,7 @@
                app:layout_constraintTop_toTopOf="parent"
                app:layout_constraintRight_toRightOf="parent"
                app:layout_constraintLeft_toLeftOf="parent"
-               android:layout_marginTop="64dp"
+               android:layout_marginTop="128dp"
                android:layout_marginLeft="32dp"
                android:layout_marginRight="32dp"
                android:id="@+id/dedicationImage"
@@ -25,8 +25,16 @@
             android:layout_height="wrap_content"
             android:textColor="@android:color/black"
             android:textStyle="bold"
-            android:id="@+id/startButton" android:layout_marginBottom="64dp"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/startButton"
+            app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp" android:background="@drawable/oval_button"/>
+            android:layout_marginStart="8dp" android:background="@drawable/oval_button"
+            android:layout_marginBottom="128dp" app:layout_constraintBottom_toBottomOf="parent"/>
+    <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" app:srcCompat="@drawable/ic_laces"
+            android:id="@+id/laces_image"
+            app:layout_constraintStart_toStartOf="@+id/startButton"
+            app:layout_constraintEnd_toEndOf="@+id/startButton" app:layout_constraintHorizontal_bias="0.0"
+            android:layout_marginTop="20dp" app:layout_constraintTop_toBottomOf="@+id/dedicationImage"/>
 </android.support.constraint.ConstraintLayout>

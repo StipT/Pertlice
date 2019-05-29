@@ -1,6 +1,7 @@
 package com.tstipanic.pertle.model.interactor
 
 import android.util.Log
+
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import com.tstipanic.pertle.common.COLLECTION_NAME
@@ -13,8 +14,8 @@ class InteractorImpl : Interactor {
     private val firestoreDb = FirebaseFirestore.getInstance().collection(COLLECTION_NAME)
 
 
-    override fun addDataToDb(comment: Comment) { //TODO showToast
-        firestoreDb.add(comment).addOnCompleteListener { Log.d("addDataToDb", it.result.toString()) }
+    override fun addDataToDb(comment: Comment) {
+        firestoreDb.add(comment).addOnCompleteListener { Log.d("addDataToDb", "Success: " + it.result.toString()) }
     }
 
 
@@ -22,14 +23,14 @@ class InteractorImpl : Interactor {
         firestoreDb.orderBy(TIMESTAMP_FIELD, Query.Direction.DESCENDING)
             .get()
             .addOnCompleteListener {
-            if (it.isSuccessful) {
-                val list = mutableListOf<Comment>()
-                for (document in it.result!!) {
-                    val comment: Comment = document.toObject(Comment::class.java)
-                    list.add(comment)
+                if (it.isSuccessful) {
+                    val list = mutableListOf<Comment>()
+                    for (document in it.result!!) {
+                        val comment: Comment = document.toObject(Comment::class.java)
+                        list.add(comment)
+                    }
+                    callback.onSuccess(list)
                 }
-                callback.onCallback(list)
             }
-        }
     }
 }
