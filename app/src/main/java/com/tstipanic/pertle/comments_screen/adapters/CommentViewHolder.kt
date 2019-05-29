@@ -19,8 +19,6 @@ class CommentViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
 
     private fun calculateTimePassed(timeOfPosting: Long?): String {
         if (timeOfPosting != null) {
-
-
             val currentTime: Long = Calendar.getInstance().timeInMillis / 1000
 
             return when (val timePassed = currentTime - timeOfPosting) {

@@ -19,12 +19,13 @@
                   android:textSize="14sp" android:textStyle="bold|italic"/>
         <TextView
                 tools:text="Best tutorial on the internet. Thank you!"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/contentContent"
                 app:layout_constraintTop_toBottomOf="@+id/commentUsername" android:layout_marginTop="16dp"
                 app:layout_constraintStart_toStartOf="@+id/commentUsername"
-                android:textSize="18sp" android:layout_marginStart="16dp"/>
+                android:textSize="18sp" android:layout_marginStart="8dp" android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent" android:textAlignment="textStart"/>
         <TextView
                 tools:text="@string/comment_date_now"
                 android:layout_width="wrap_content"
