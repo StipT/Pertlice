@@ -29,7 +29,9 @@ val learningModule = module { factory<LearningPresenter> { (view: LearningView) 
 val commentsModule = module {
 
     factory<CommentsPresenter> { (view: CommentsView) -> CommentsPresenterImpl(view) }
+
     factory<CommentsFragPresenter> { (view: CommentsFragView) -> CommentsFragPresenterImpl(view, get()) }
+
     factory<Interactor> { InteractorImpl() }
 
 }
